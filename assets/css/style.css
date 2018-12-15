@@ -3,7 +3,9 @@ body {
   font-size: 18px;
   line-height: 34px;
   color: #777777;
-  background: url("../images/concrete_seamless.png");
+
+  /* I had to hide the background image in order to see the media queries function in the index page */
+  /* background: url("../images/concrete_seamless.png"); */
 }
 
 * {
@@ -53,7 +55,7 @@ h3 {
 /* header */
 
 #masthead {
-  position: fixed;
+  position: static;
   z-index: 99;
   width: 100%;
   margin: 0 0 30px;
@@ -214,4 +216,54 @@ input[type=submit] {
   cursor: pointer;
   background: #4aaaa5;
   border: 0 none;
+
+}
+  /* Here are my media screen tags illustrating the corresponding sizes. 
+  Using different color for each size helps to see when the screen size is changing */
+
+@media screen and (max-width: 980px) {
+    body {
+      background-color: lightgreen;
+    }
+
+    @media screen and (max-width: 768px) {
+      body {
+        background-color:yellow;
+      }
+
+      @media screen and (max-width: 640px) {
+        body {
+          background-color:red;
+        }
+
+  }
+}
+/* ?animations */
+
+div {
+  with: 100px;
+  height: 100px;
+  background-color: red;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+  animation-name: example;
+  animation-duration: 4s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes example {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+
+/* Standard syntax */
+@keyframes example {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
+}
+
 }
